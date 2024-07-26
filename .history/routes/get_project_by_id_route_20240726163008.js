@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const getProjectById = require("../controllers/getProjectById");
+const getProjectById = require("../controllers/getEmpActivityById");
 
 router.get("/:id", async (req, res) => {
   const projectId = parseInt(req.params.id);

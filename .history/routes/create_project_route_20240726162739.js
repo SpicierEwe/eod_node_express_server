@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const createProject = require("../controllers/createProject");
+const createProject = require("../controllers/createEmpActivity");
 
 router.post("/", async (req, res) => {
   try {

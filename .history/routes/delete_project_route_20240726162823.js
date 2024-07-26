@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const deleteProject = require("../controllers/deleteProject");
+const deleteProject = require("../controllers/deleteEmpActivity");
 
 router.delete("/:id", async (req, res) => {
   const pojectId = parseInt(req.params.id);

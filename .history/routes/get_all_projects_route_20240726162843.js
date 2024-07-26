@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const getAllprojects = require("../controllers/getAllProjects");
+const getAllprojects = require("../controllers/getAllEmpActivities");
 
 router.get("/", async (req, res) => {
   try {

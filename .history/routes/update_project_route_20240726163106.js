@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const updateProject = require("../controllers/updateProject");
+const updateProject = require("../controllers/updateEmpActivity");
 
 router.put("/:id", async (req, res) => {
   const projectId = parseInt(req.params.id);

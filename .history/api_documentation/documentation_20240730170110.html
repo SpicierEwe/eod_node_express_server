@@ -75,7 +75,7 @@
       </div>
 
       <div class="route">
-        <h2><span class="method post">POST</span> /certificates</h2>
+        <h2><span class="method post">POST</span> /activities</h2>
         <p>Creates a new certificate.</p>
         <p><strong>Request Body:</strong></p>
         <pre><code>{
@@ -85,30 +85,30 @@
     "certificate_of": "Course Completion",
     "date": "2024-07-01",
     "profile": "Profile Info",
-    "time": "12:00:00",  // Use 24-hour format
+    "time": "12:00 PM",
     "c_type": "Type of Certificate",
     "content": "Certificate Content",
     "issued_by": "Issuer Name",
     "status": "Active",
     "time_stamp": "2024-07-01 08:00:00"
 }</code></pre>
-        <pre><code>curl -X POST http://localhost:3000/certificates -H "Content-Type: application/json" -d '{ "name": "Certificate Name", "email": "example@example.com", "months": 6, "certificate_of": "Course Completion", "date": "2024-07-01", "profile": "Profile Info", "time": "12:00:00", "c_type": "Type of Certificate", "content": "Certificate Content", "issued_by": "Issuer Name", "status": "Active", "time_stamp": "2024-07-01 08:00:00" }'</code></pre>
+        <pre><code>curl -X POST http://localhost:3000/activities -H "Content-Type: application/json" -d '{ "name": "Certificate Name", "email": "example@example.com", "months": 6, "certificate_of": "Course Completion", "date": "2024-07-01", "profile": "Profile Info", "time": "12:00 PM", "c_type": "Type of Certificate", "content": "Certificate Content", "issued_by": "Issuer Name", "status": "Active", "time_stamp": "2024-07-01 08:00:00" }'</code></pre>
       </div>
 
       <div class="route">
-        <h2><span class="method get">GET</span> /certificates</h2>
+        <h2><span class="method get">GET</span> /activities</h2>
         <p>Fetches all certificates.</p>
-        <pre><code>curl -X GET http://localhost:3000/certificates</code></pre>
+        <pre><code>curl -X GET http://localhost:3000/activities</code></pre>
       </div>
 
       <div class="route">
-        <h2><span class="method get">GET</span> /certificates/:id</h2>
+        <h2><span class="method get">GET</span> /activities/:id</h2>
         <p>Fetches a specific certificate by ID.</p>
-        <pre><code>curl -X GET http://localhost:3000/certificates/3</code></pre>
+        <pre><code>curl -X GET http://localhost:3000/activities/3</code></pre>
       </div>
 
       <div class="route">
-        <h2><span class="method put">PUT</span> /certificates/:id</h2>
+        <h2><span class="method put">PUT</span> /activities/:id</h2>
         <p>Updates an existing certificate by ID.</p>
         <p><strong>Request Body:</strong></p>
         <pre><code>{
@@ -118,20 +118,20 @@
     "certificate_of": "Updated Course Completion",
     "date": "2024-07-02",
     "profile": "Updated Profile Info",
-    "time": "13:00:00",  // Use 24-hour format
+    "time": "1:00 PM",
     "c_type": "Updated Type of Certificate",
     "content": "Updated Certificate Content",
     "issued_by": "Updated Issuer Name",
     "status": "Inactive",
     "time_stamp": "2024-07-02 08:00:00"
 }</code></pre>
-        <pre><code>curl -X PUT http://localhost:3000/certificates/3 -H "Content-Type: application/json" -d '{ "name": "Updated Certificate Name", "email": "updated@example.com", "months": 12, "certificate_of": "Updated Course Completion", "date": "2024-07-02", "profile": "Updated Profile Info", "time": "13:00:00", "c_type": "Updated Type of Certificate", "content": "Updated Certificate Content", "issued_by": "Updated Issuer Name", "status": "Inactive", "time_stamp": "2024-07-02 08:00:00" }'</code></pre>
+        <pre><code>curl -X PUT http://localhost:3000/activities/3 -H "Content-Type: application/json" -d '{ "name": "Updated Certificate Name", "email": "updated@example.com", "months": 12, "certificate_of": "Updated Course Completion", "date": "2024-07-02", "profile": "Updated Profile Info", "time": "1:00 PM", "c_type": "Updated Type of Certificate", "content": "Updated Certificate Content", "issued_by": "Updated Issuer Name", "status": "Inactive", "time_stamp": "2024-07-02 08:00:00" }'</code></pre>
       </div>
 
       <div class="route">
-        <h2><span class="method delete">DELETE</span> /certificates/:id</h2>
+        <h2><span class="method delete">DELETE</span> /activities/:id</h2>
         <p>Deletes a certificate by ID.</p>
-        <pre><code>curl -X DELETE http://localhost:3000/certificates/3</code></pre>
+        <pre><code>curl -X DELETE http://localhost:3000/activities/3</code></pre>
       </div>
 
       <div class="route">

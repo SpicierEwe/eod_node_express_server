@@ -12,7 +12,9 @@ app.use(express.json());
 // Import route files with the naming convention
 const createRoute = require("./routes/create-route");
 const getAllRoute = require("./routes/getAll-route");
-const getByIdRoute = require("./routes/getById-route");
+const getByIdRoute = require("./
+  
+);
 const updateRoute = require("./routes/update-route");
 const deleteRoute = require("./routes/delete-route");
 

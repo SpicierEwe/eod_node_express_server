@@ -10,7 +10,7 @@ app.use(express.json());
 // Routes
 
 // Import route files with the naming convention
-const createRoute = require("./routes/create-route");
+const createoute = require("./routes/create-route");
 const getAllRoute = require("./routes/getAll-route");
 const getByIdRoute = require("./routes/getById-route");
 const updateRoute = require("./routes/update-route");
@@ -22,11 +22,11 @@ app.get("/", (req, res) => {
 });
 
 // Use the routes
-app.use("/ior", createRoute);
-app.use("/ior", getAllRoute);
-app.use("/ior", getByIdRoute);
-app.use("/ior", updateRoute);
-app.use("/ior", deleteRoute);
+app.use("/certificates", createoute);
+app.use("/certificates", getAllRoute);
+app.use("/certificates", getByIdRoute);
+app.use("/certificates", updateRoute);
+app.use("/certificates", deleteRoute);
 
 // Start server
 app.listen(port, () => {

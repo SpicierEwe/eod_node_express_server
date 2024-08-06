@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EOD Management API Documentation</title>
+    <title>Ior Management API Documentation</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -62,9 +62,9 @@
   </head>
   <body>
     <div class="container">
-      <h1>EOD Management API Documentation</h1>
+      <h1>Ior Management API Documentation</h1>
       <p>
-        Welcome to the API documentation for the EOD Management System. Below
+        Welcome to the API documentation for the Ior Management System. Below
         you'll find details on how to use each endpoint.
       </p>
 
@@ -76,75 +76,75 @@
 
       <div class="route">
         <h2><span class="method post">POST</span> /eod</h2>
-        <p>Creates a new EOD entry.</p>
+        <p>Creates a new Ior entry.</p>
         <p><strong>Request Body:</strong></p>
         <pre><code>{
-    "title": "Title",
-    "description": "Description of the entry",
-    "department": "Department Name",
+    "profile": "Profile Info",
+    "name": "Name",
+    "months": 6,
     "date": "2024-07-01",
-    "to": "Recipient Name",
-    "from": "Sender Name",
-    "createdAt": "2024-07-01 08:00:00",
-    "updatedAt": "2024-07-01 08:00:00",
-    "employee_id": "12345",
-    "manager_id": "67890"
+    "issued_by": "Issuer Name",
+    "pronoun1": "He",
+    "pronoun2": "Him",
+    "content": "Ior Content",
+    "status": "Active",
+    "time_stamp": "2024-07-01 08:00:00"
 }</code></pre>
-        <pre><code>curl -X POST http://localhost:3000/eod -H "Content-Type: application/json" -d '{ "title": "Title", "description": "Description of the entry", "department": "Department Name", "date": "2024-07-01", "to": "Recipient Name", "from": "Sender Name", "createdAt": "2024-07-01 08:00:00", "updatedAt": "2024-07-01 08:00:00", "employee_id": "12345", "manager_id": "67890" }'</code></pre>
+        <pre><code>curl -X POST http://localhost:3000/eod -H "Content-Type: application/json" -d '{ "profile": "Profile Info", "name": "Name", "months": 6, "date": "2024-07-01", "issued_by": "Issuer Name", "pronoun1": "He", "pronoun2": "Him", "content": "Ior Content", "status": "Active", "time_stamp": "2024-07-01 08:00:00" }'</code></pre>
       </div>
 
       <div class="route">
         <h2><span class="method get">GET</span> /eod</h2>
-        <p>Fetches all EOD entries.</p>
+        <p>Fetches all Ior entries.</p>
         <pre><code>curl -X GET http://localhost:3000/eod</code></pre>
       </div>
 
       <div class="route">
         <h2><span class="method get">GET</span> /eod/:id</h2>
-        <p>Fetches a specific EOD entry by ID.</p>
+        <p>Fetches a specific Ior entry by ID.</p>
         <pre><code>curl -X GET http://localhost:3000/eod/3</code></pre>
       </div>
 
       <div class="route">
         <h2><span class="method put">PUT</span> /eod/:id</h2>
-        <p>Updates an existing EOD entry by ID.</p>
+        <p>Updates an existing Ior entry by ID.</p>
         <p><strong>Request Body:</strong></p>
         <pre><code>{
-    "title": "Updated Title",
-    "description": "Updated Description",
-    "department": "Updated Department",
+    "profile": "Updated Profile Info",
+    "name": "Updated Name",
+    "months": 12,
     "date": "2024-07-02",
-    "to": "Updated Recipient",
-    "from": "Updated Sender",
-    "createdAt": "2024-07-02 08:00:00",
-    "updatedAt": "2024-07-02 08:00:00",
-    "employee_id": "54321",
-    "manager_id": "09876"
+    "issued_by": "Updated Issuer Name",
+    "pronoun1": "They",
+    "pronoun2": "Them",
+    "content": "Updated Ior Content",
+    "status": "Inactive",
+    "time_stamp": "2024-07-02 08:00:00"
 }</code></pre>
-        <pre><code>curl -X PUT http://localhost:3000/eod/3 -H "Content-Type: application/json" -d '{ "title": "Updated Title", "description": "Updated Description", "department": "Updated Department", "date": "2024-07-02", "to": "Updated Recipient", "from": "Updated Sender", "createdAt": "2024-07-02 08:00:00", "updatedAt": "2024-07-02 08:00:00", "employee_id": "54321", "manager_id": "09876" }'</code></pre>
+        <pre><code>curl -X PUT http://localhost:3000/eod/3 -H "Content-Type: application/json" -d '{ "profile": "Updated Profile Info", "name": "Updated Name", "months": 12, "date": "2024-07-02", "issued_by": "Updated Issuer Name", "pronoun1": "They", "pronoun2": "Them", "content": "Updated Ior Content", "status": "Inactive", "time_stamp": "2024-07-02 08:00:00" }'</code></pre>
       </div>
 
       <div class="route">
         <h2><span class="method delete">DELETE</span> /eod/:id</h2>
-        <p>Deletes an EOD entry by ID.</p>
+        <p>Deletes an Ior entry by ID.</p>
         <pre><code>curl -X DELETE http://localhost:3000/eod/3</code></pre>
       </div>
 
       <div class="route">
         <h2>Database Schema</h2>
-        <p>The table structure for the <code>eod</code> table:</p>
-        <pre><code>CREATE TABLE eod (
+        <p>The table structure for the <code>Ior</code> table:</p>
+        <pre><code>CREATE TABLE Ior (
   id SERIAL PRIMARY KEY,
-  title VARCHAR(255),
-  description TEXT,
-  department VARCHAR(255),
+  profile TEXT,
+  name VARCHAR(255),
+  months INT,
   date DATE NOT NULL,
-  to VARCHAR(255),
-  from VARCHAR(255),
-  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  employee_id VARCHAR(255),
-  manager_id VARCHAR(255)
+  issued_by VARCHAR(255),
+  pronoun1 VARCHAR(50),
+  pronoun2 VARCHAR(50),
+  content TEXT,
+  status VARCHAR(50),
+  time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 </code></pre>
       </div>
